@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SpotifyFun</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <h1>ReDiscover Your Old Spotify Liked Tracks</h1>
+    <ul>
+      <li><%= link_to "home", root_path %></li>
+      <li><%= link_to "spotify likes", spotify_likes_path %></li>
+      <li><%= link_to "sign in with spotify", user_spotify_omniauth_authorize_path, method: :post %>
+    </ul>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <hr />
+    <%= yield %>
+    <hr />
+    <p><%= link_to "help & stuff", "https://github.com/justinperkins/spotify-fun" %></p>
+  </body>
+</html>
